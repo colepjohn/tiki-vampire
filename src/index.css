@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tiki-orange: #FF6B35;
+  --color-tiki-yellow: #F7C59F;
+  --color-tiki-green: #2E7D32;
+  --color-tiki-teal: #00897B;
+  --color-vampire-red: #8B0000;
+  --color-vampire-purple: #4A0E4E;
+  --color-vampire-dark: #1A0A1E;
+  --color-vampire-pink: #FF4081;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.tiki-gradient {
+  background: linear-gradient(135deg, #FF6B35 0%, #F7C59F 50%, #2E7D32 100%);
+}
+
+.vampire-gradient {
+  background: linear-gradient(135deg, #1A0A1E 0%, #4A0E4E 50%, #8B0000 100%);
+}
+
+.party-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 107, 53, 0.5), 0 0 20px rgba(139, 0, 0, 0.3);
+}
+
+.reveal-tiki {
+  background: linear-gradient(135deg, #FF6B35, #F7C59F, #2E7D32);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.reveal-vampire {
+  background: linear-gradient(135deg, #8B0000, #4A0E4E, #FF4081);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  font-weight: bold;
+}
