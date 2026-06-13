@@ -24,27 +24,7 @@ export default function HomePage() {
     let assignment: 'Tiki' | 'Vampire' | null = null;
 
     if (attending) {
-      // Fetch current counts for balanced assignment
-      const { count: tikiCount, error: tikiError } = await supabase
-        .from('rsvps')
-        .select('*', { count: 'exact', head: true })
-        .eq('assignment', 'Tiki');
-
-      const { count: vampireCount, error: vampireError } = await supabase
-        .from('rsvps')
-        .select('*', { count: 'exact', head: true })
-        .eq('assignment', 'Vampire');
-
-      if (!tikiError && !vampireError) {
-        if ((tikiCount ?? 0) <= (vampireCount ?? 0)) {
-          assignment = 'Tiki';
-        } else {
-          assignment = 'Vampire';
-        }
-      } else {
-        // Fallback to random if count query fails
-        assignment = Math.random() < 0.5 ? 'Tiki' : 'Vampire';
-      }
+      assignment = Math.random() < 0.5 ? 'Tiki' : 'Vampire';
     }
 
     const { error: submitError } = await supabase
